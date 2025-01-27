@@ -3,7 +3,8 @@
 class Indicator {
   constructor(slide) {
     this.slide = slide;
-    this.size = 50;
+    this.wsize = 50;
+    this.hsize = 80;
     this.element = this.createElement();
     this.move(0);
     setInterval(this.timerHandler.bind(this), 100);
@@ -11,8 +12,8 @@ class Indicator {
   createElement() {
     var div = document.createElement("div");
     div.style.position = "absolute";
-    div.style.width = this.size + "px";
-    div.style.height = this.size + "px";
+    div.style.width = this.wsize + "px";
+    div.style.height = this.hsize + "px";
     return div;
   }
   appendedTo(element) {
@@ -41,8 +42,8 @@ class TimeIndicator extends Indicator {
   createElement() {
     var div = super.createElement();
     div.style.backgroundImage =
-      "url(" + chrome.runtime.getURL("images/buri.png") + ")";
-    div.style.opacity = "0.5";
+      "url(" + chrome.runtime.getURL("images/buri50x80.png") + ")";
+    div.style.opacity = "0.6";
     return div;
   }
   timerHandler() {
@@ -70,8 +71,8 @@ class ProgressIndicator extends Indicator {
   createElement() {
     var div = super.createElement();
     div.style.backgroundImage =
-      "url(" + chrome.runtime.getURL("images/mure.png") + ")";
-    div.style.opacity = "0.5";
+      "url(" + chrome.runtime.getURL("images/mure50x80.png") + ")";
+    div.style.opacity = "0.6";
     return div;
   }
   timerHandler() {
